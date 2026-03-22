@@ -3,121 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f8d86a" />
-    <title>Para Brenda 💛</title>
+    <meta name="theme-color" content="#bfe7ff" />
+    <title>Emma Julietta ✨</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <!--
-      Escena:
-      - Canvas y flores van detrás del contenido (decoración)
-      - El contenido principal va por encima (carta/contador)
-    -->
     <canvas class="ambient-canvas" aria-hidden="true"></canvas>
-    <div class="flower-layer" aria-hidden="true"></div>
+    <div class="sky" aria-hidden="true">
+      <div class="clouds clouds--back parallax" data-speed="0.12"></div>
+      <div class="clouds clouds--front parallax" data-speed="0.2"></div>
+    </div>
 
     <main class="scene" role="main">
-      <header class="hero">
-        <div class="hero__badge">21 de marzo · Flores amarillas</div>
-        <h1 class="hero__title">Para Brenda <span aria-hidden="true">💛</span></h1>
+      <header class="hero reveal">
+        <div class="hero-clouds" aria-hidden="true">
+          <div class="hero-clouds__layer hero-clouds__layer--far">
+            <span class="hcloud hcloud--1"></span>
+            <span class="hcloud hcloud--2"></span>
+            <span class="hcloud hcloud--3"></span>
+          </div>
+          <div class="hero-clouds__layer hero-clouds__layer--mid">
+            <span class="hcloud hcloud--4"></span>
+            <span class="hcloud hcloud--5"></span>
+            <span class="hcloud hcloud--6"></span>
+          </div>
+          <div class="hero-clouds__layer hero-clouds__layer--near">
+            <span class="hcloud hcloud--7"></span>
+            <span class="hcloud hcloud--8"></span>
+          </div>
+        </div>
+
+        <div class="hero__badge">
+          <span class="badge__dot" aria-hidden="true"></span>
+          Un álbum de ultrasonidos
+        </div>
+        <h1 class="hero__title">Emma Julietta</h1>
         <p class="hero__subtitle">
-          Un detalle digital para recordarte que, contigo, todo florece más bonito.
+          Julietta, eres nuestro pedacito de cielo que ya está cambiando todo.
         </p>
+
+        <div class="chips" role="list" aria-label="Información principal">
+          <div class="chip" role="listitem">
+            <div class="chip__label">Nombre completo</div>
+            <div class="chip__value">Emma Julietta Nuñez Herrera</div>
+          </div>
+          <div class="chip" role="listitem">
+            <div class="chip__label">Nacimiento programado</div>
+            <div class="chip__value">2 de abril de 2026</div>
+          </div>
+          <div class="chip" role="listitem">
+            <div class="chip__label">Desarrollo gestacional</div>
+            <div class="chip__value">35 semanas y 2 días</div>
+          </div>
+        </div>
       </header>
 
-      <section class="glass-card" aria-label="Mensaje principal">
+      <section class="glass-card reveal" aria-label="Contador regresivo">
         <div class="glass-card__glow" aria-hidden="true"></div>
 
-        <div class="message">
-          <h2 class="message__title">Mi amor:</h2>
-          <p class="message__text">
-            Desde que llegaste a mi vida, cada día tiene más luz, más color y más sentido. Hoy te regalo
-            estas flores amarillas como un recordatorio sencillo pero profundo: me encantas, me inspiras y
-            me haces sentir en casa.
-          </p>
-          <p class="message__text">
-            Que este 21 de marzo nos encuentre con el corazón tibio y la mirada llena de planes. Gracias por
-            ser mi calma, mi risa y mi lugar favorito.
-          </p>
-          <p class="message__signature">Con todo mi cariño, <span class="signature__name">para ti</span>.</p>
+        <div class="countdown__head">
+          <h2 class="section-title">Cuenta regresiva</h2>
+          <p class="section-subtitle">Tiempo restante hasta el 2 de abril de 2026</p>
         </div>
 
-        <div class="counter-card" aria-label="Tiempo que llevamos juntos">
-          <div class="counter-card__top">
-            <div class="counter-card__label">Tiempo desde el 29 de diciembre de 2024</div>
-            <div class="counter-card__hint">Actualiza en tiempo real</div>
+        <div class="countdown" role="group" aria-label="Contador">
+          <div class="countdown__item">
+            <div class="countdown__value" id="cdDays">0</div>
+            <div class="countdown__unit">días</div>
           </div>
-
-          <div class="counter" role="group" aria-label="Contador">
-            <div class="counter__item">
-              <div class="counter__value" id="years">0</div>
-              <div class="counter__unit">años</div>
-            </div>
-            <div class="counter__item">
-              <div class="counter__value" id="months">0</div>
-              <div class="counter__unit">meses</div>
-            </div>
-            <div class="counter__item">
-              <div class="counter__value" id="days">0</div>
-              <div class="counter__unit">días</div>
-            </div>
-            <div class="counter__item">
-              <div class="counter__value" id="hours">00</div>
-              <div class="counter__unit">horas</div>
-            </div>
-            <div class="counter__item">
-              <div class="counter__value" id="minutes">00</div>
-              <div class="counter__unit">min</div>
-            </div>
-            <div class="counter__item">
-              <div class="counter__value" id="seconds">00</div>
-              <div class="counter__unit">seg</div>
-            </div>
+          <div class="countdown__item">
+            <div class="countdown__value" id="cdHours">00</div>
+            <div class="countdown__unit">horas</div>
+          </div>
+          <div class="countdown__item">
+            <div class="countdown__value" id="cdMinutes">00</div>
+            <div class="countdown__unit">min</div>
+          </div>
+          <div class="countdown__item">
+            <div class="countdown__value" id="cdSeconds">00</div>
+            <div class="countdown__unit">seg</div>
           </div>
         </div>
 
-        <div class="actions">
-          <button class="reveal-btn" type="button" id="revealBtn" aria-expanded="false" aria-controls="letter">
-            Un detalle para ti <span aria-hidden="true">💛</span>
-          </button>
-        </div>
-
-        <section class="letter" id="letter" aria-label="Carta especial">
-          <div class="letter__paper" role="group" aria-label="Mensaje oculto">
-            <div class="letter__top">
-              <div class="letter__seal" aria-hidden="true"></div>
-              <div class="letter__title">Brenda,</div>
-            </div>
-
-            <p class="letter__text">
-              Si pudiera guardar un instante bonito en un frasco, sería cualquiera en el que estás tú: tu voz,
-              tu mirada, tu manera de hacer que todo se sienta más suave. Ojalá estas flores amarillas te abracen
-              desde la pantalla y te recuerden lo que yo siento: que eres un regalo, y que elegirte cada día es mi
-              forma favorita de amar.
-            </p>
-            <p class="letter__text">
-              Prometo cuidarte con detalles, con paciencia y con esa ternura que sólo tú despiertas en mí. Hoy y
-              siempre: contigo, sí.
-            </p>
-
-            <div class="letter__footer">
-              <span class="letter__spark" aria-hidden="true"></span>
-              <span class="letter__closing">Feliz 21 de marzo, mi amor.</span>
-              <span class="letter__spark" aria-hidden="true"></span>
-            </div>
-          </div>
-        </section>
+        <div class="countdown__note" id="tzNote" aria-live="polite"></div>
       </section>
 
-      <section class="tree-wrap" aria-hidden="true"></section>
+      <section class="gallery reveal" aria-label="Galería de ultrasonidos">
+        <div class="gallery__head">
+          <h2 class="section-title">Galería de ultrasonidos</h2>
+          <p class="section-subtitle">Toca una tarjeta para ver el archivo en grande.</p>
+        </div>
 
-      <footer class="closing" aria-label="Cierre">
+        <div class="gallery-grid" id="gallery" role="list" aria-label="Ultrasonidos"></div>
+      </section>
+
+      <footer class="closing reveal" aria-label="Cierre">
         <div class="closing__line" aria-hidden="true"></div>
-        <div class="closing__flower" aria-hidden="true"></div>
-        <p class="closing__text">Que nuestras primaveras siempre se encuentren.</p>
+        <p class="closing__text">Te esperamos con amor infinito, Emma Julietta.</p>
       </footer>
     </main>
+
+    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Vista de ultrasonido">
+      <div class="modal__backdrop" data-close="true" aria-hidden="true"></div>
+      <div class="modal__panel" role="document">
+        <div class="modal__top">
+          <div class="modal__title" id="modalTitle">Ultrasonido</div>
+          <button class="icon-btn" type="button" id="modalClose" aria-label="Cerrar" data-close="true">×</button>
+        </div>
+        <div class="modal__body">
+          <object class="pdf-view" id="pdfObject" type="application/pdf" data="">
+            <p class="pdf-fallback">
+              No se pudo mostrar el PDF aquí. <a id="pdfLink" href="#" target="_blank" rel="noreferrer">Abrir en una pestaña</a>
+            </p>
+          </object>
+        </div>
+        <div class="modal__bottom">
+          <a class="link-btn" id="pdfDownload" href="#" target="_blank" rel="noreferrer">Abrir / Descargar</a>
+        </div>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
