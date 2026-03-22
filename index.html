@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8d86a" />
+    <title>Para Brenda 💛</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!--
+      Escena:
+      - Canvas y flores van detrás del contenido (decoración)
+      - El contenido principal va por encima (carta/contador)
+    -->
+    <canvas class="ambient-canvas" aria-hidden="true"></canvas>
+    <div class="flower-layer" aria-hidden="true"></div>
+
+    <main class="scene" role="main">
+      <header class="hero">
+        <div class="hero__badge">21 de marzo · Flores amarillas</div>
+        <h1 class="hero__title">Para Brenda <span aria-hidden="true">💛</span></h1>
+        <p class="hero__subtitle">
+          Un detalle digital para recordarte que, contigo, todo florece más bonito.
+        </p>
+      </header>
+
+      <section class="glass-card" aria-label="Mensaje principal">
+        <div class="glass-card__glow" aria-hidden="true"></div>
+
+        <div class="message">
+          <h2 class="message__title">Mi amor:</h2>
+          <p class="message__text">
+            Desde que llegaste a mi vida, cada día tiene más luz, más color y más sentido. Hoy te regalo
+            estas flores amarillas como un recordatorio sencillo pero profundo: me encantas, me inspiras y
+            me haces sentir en casa.
+          </p>
+          <p class="message__text">
+            Que este 21 de marzo nos encuentre con el corazón tibio y la mirada llena de planes. Gracias por
+            ser mi calma, mi risa y mi lugar favorito.
+          </p>
+          <p class="message__signature">Con todo mi cariño, <span class="signature__name">para ti</span>.</p>
+        </div>
+
+        <div class="counter-card" aria-label="Tiempo que llevamos juntos">
+          <div class="counter-card__top">
+            <div class="counter-card__label">Tiempo desde el 29 de diciembre de 2024</div>
+            <div class="counter-card__hint">Actualiza en tiempo real</div>
+          </div>
+
+          <div class="counter" role="group" aria-label="Contador">
+            <div class="counter__item">
+              <div class="counter__value" id="years">0</div>
+              <div class="counter__unit">años</div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__value" id="months">0</div>
+              <div class="counter__unit">meses</div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__value" id="days">0</div>
+              <div class="counter__unit">días</div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__value" id="hours">00</div>
+              <div class="counter__unit">horas</div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__value" id="minutes">00</div>
+              <div class="counter__unit">min</div>
+            </div>
+            <div class="counter__item">
+              <div class="counter__value" id="seconds">00</div>
+              <div class="counter__unit">seg</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="reveal-btn" type="button" id="revealBtn" aria-expanded="false" aria-controls="letter">
+            Un detalle para ti <span aria-hidden="true">💛</span>
+          </button>
+        </div>
+
+        <section class="letter" id="letter" aria-label="Carta especial">
+          <div class="letter__paper" role="group" aria-label="Mensaje oculto">
+            <div class="letter__top">
+              <div class="letter__seal" aria-hidden="true"></div>
+              <div class="letter__title">Brenda,</div>
+            </div>
+
+            <p class="letter__text">
+              Si pudiera guardar un instante bonito en un frasco, sería cualquiera en el que estás tú: tu voz,
+              tu mirada, tu manera de hacer que todo se sienta más suave. Ojalá estas flores amarillas te abracen
+              desde la pantalla y te recuerden lo que yo siento: que eres un regalo, y que elegirte cada día es mi
+              forma favorita de amar.
+            </p>
+            <p class="letter__text">
+              Prometo cuidarte con detalles, con paciencia y con esa ternura que sólo tú despiertas en mí. Hoy y
+              siempre: contigo, sí.
+            </p>
+
+            <div class="letter__footer">
+              <span class="letter__spark" aria-hidden="true"></span>
+              <span class="letter__closing">Feliz 21 de marzo, mi amor.</span>
+              <span class="letter__spark" aria-hidden="true"></span>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="tree-wrap" aria-hidden="true"></section>
+
+      <footer class="closing" aria-label="Cierre">
+        <div class="closing__line" aria-hidden="true"></div>
+        <div class="closing__flower" aria-hidden="true"></div>
+        <p class="closing__text">Que nuestras primaveras siempre se encuentren.</p>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
