@@ -10,18 +10,17 @@
   const TARGET_LOCAL = new Date(2026, 3, 2, 0, 0, 0); // 2 de abril 2026 00:00:00 (hora local)
 
   const ULTRASOUNDS = [
-    "ultrasonidos/BRANDA HERRERA ALVAR.pdf",
-    "ultrasonidos/BRENDA HDZ ALVAREZ.pdf",
-    "ultrasonidos/BRENDA HERRERA ALVAR 2.pdf",
-    "ultrasonidos/BRENDA HERRERA ALVAR 3.pdf",
-    "ultrasonidos/BRENDA HERRERA ALVAR 4.pdf",
-    "ultrasonidos/BRENDA HERRERA ALVAR 5.pdf",
-    "ultrasonidos/BRENDA HERRERA ALVAR.pdf",
-    "ultrasonidos/IMAGENES CRECIMIENTO.pdf",
-    "ultrasonidos/IMAGENES ESTRUCTURAL.pdf",
-    "ultrasonidos/IMAGENES.pdf",
     "ultrasonidos/OB20250827133322_Obstetricia.pdf",
+    "ultrasonidos/IMAGENES.pdf",
     "ultrasonidos/OB20250911145249_Obstetricia.pdf",
+    "ultrasonidos/BRENDA HERRERA ALVAR 4.pdf",
+    "ultrasonidos/BRENDA HERRERA ALVAR 3.pdf",
+    "ultrasonidos/BRENDA HDZ ALVAREZ.pdf",
+    "ultrasonidos/IMAGENES ESTRUCTURAL.pdf",
+    "ultrasonidos/BRANDA HERRERA ALVAR.pdf",
+    "ultrasonidos/BRENDA HERRERA ALVAR 2.pdf",
+    "ultrasonidos/IMAGENES CRECIMIENTO.pdf",
+    "ultrasonidos/BRENDA HERRERA ALVAR.pdf",
   ];
 
   const els = {
