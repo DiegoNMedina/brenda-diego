@@ -15,9 +15,13 @@
     "ultrasonidos/BRENDA HERRERA ALVAR 2.pdf",
     "ultrasonidos/BRENDA HERRERA ALVAR 3.pdf",
     "ultrasonidos/BRENDA HERRERA ALVAR 4.pdf",
+    "ultrasonidos/BRENDA HERRERA ALVAR 5.pdf",
     "ultrasonidos/BRENDA HERRERA ALVAR.pdf",
+    "ultrasonidos/IMAGENES CRECIMIENTO.pdf",
     "ultrasonidos/IMAGENES ESTRUCTURAL.pdf",
+    "ultrasonidos/IMAGENES.pdf",
     "ultrasonidos/OB20250827133322_Obstetricia.pdf",
+    "ultrasonidos/OB20250911145249_Obstetricia.pdf",
   ];
 
   const els = {
@@ -366,4 +370,3 @@
     init();
   }
 })();
-
