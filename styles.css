@@ -502,6 +502,90 @@ body {
   position: relative;
 }
 
+.soft-head {
+  display: grid;
+  gap: 8px;
+}
+
+.soft-head .section-subtitle {
+  margin-top: 0;
+}
+
+.info-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.info-item {
+  border-radius: 16px;
+  padding: 12px 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+.info-item__label {
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(20, 28, 40, 0.56);
+}
+
+.info-item__value {
+  margin-top: 6px;
+  font-weight: 780;
+  color: rgba(20, 28, 40, 0.9);
+  line-height: 1.4;
+}
+
+.info-item--wide {
+  grid-column: 1 / -1;
+}
+
+.action-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.action-row--split {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn--soft {
+  background:
+    radial-gradient(90px 30px at 30% 0%, rgba(255, 255, 255, 0.78), transparent 70%),
+    linear-gradient(135deg, rgba(var(--accent-3-rgb), 0.62), rgba(var(--accent-2-rgb), 0.58) 55%, rgba(var(--accent-rgb), 0.56));
+  box-shadow: 0 16px 44px rgba(var(--accent-2-rgb), 0.16);
+}
+
+.gift-placeholder {
+  margin-top: 14px;
+  border-radius: 18px;
+  padding: 14px 14px;
+  background:
+    radial-gradient(520px 160px at 14% 0%, rgba(var(--accent-rgb), 0.14), transparent 62%),
+    radial-gradient(520px 160px at 90% 0%, rgba(var(--accent-2-rgb), 0.14), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+.gift-placeholder__title {
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  color: rgba(20, 28, 40, 0.9);
+}
+
+.gift-placeholder__text {
+  margin-top: 6px;
+  color: rgba(20, 28, 40, 0.68);
+  line-height: 1.55;
+}
+
 .countdown__head {
   margin-bottom: 14px;
 }
@@ -935,6 +1019,10 @@ body {
 
   .chips {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .countdown {

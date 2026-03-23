@@ -1,13 +1,13 @@
 /*
   Página web dedicada a Emma Julietta (HTML/CSS/JS puro)
   - Galería interactiva de ultrasonidos (PDF) desde /ultrasonidos
-  - Contador regresivo hasta el 2 de abril de 2026 (hora local del usuario)
+  - Contador regresivo hasta el 3 de abril de 2026 (hora local del usuario)
   - Animaciones suaves (nubes, brillos, corazones/estrellas), parallax y reveal al hacer scroll
 */
 
 (() => {
   const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
-  const TARGET_LOCAL = new Date(2026, 3, 2, 0, 0, 0); // 2 de abril 2026 00:00:00 (hora local)
+  const TARGET_LOCAL = new Date(2026, 3, 3, 0, 0, 0); // 3 de abril 2026 00:00:00 (hora local)
 
   const ULTRASOUNDS = [
     "ultrasonidos/OB20250827133322_Obstetricia.pdf",
