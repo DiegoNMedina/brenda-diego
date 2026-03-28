@@ -3,225 +3,264 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fcdd8a" />
-    <title>Emma Julietta ✨</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>En construcción</title>
+    <style>
+      :root {
+        --bg-0: #070a12;
+        --bg-1: #0b1020;
+        --bg-2: #120c1e;
+        --ink: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --muted-2: rgba(255, 255, 255, 0.55);
+        --glass: rgba(255, 255, 255, 0.08);
+        --stroke: rgba(255, 255, 255, 0.14);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+        --radius: 22px;
+        --accent-a: 253, 178, 198;
+        --accent-b: 252, 221, 138;
+        --accent-c: 124, 214, 255;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(1200px 800px at 12% 18%, rgba(var(--accent-c), 0.18), transparent 62%),
+          radial-gradient(900px 700px at 85% 14%, rgba(var(--accent-a), 0.16), transparent 62%),
+          radial-gradient(1100px 900px at 50% 110%, rgba(var(--accent-b), 0.14), transparent 58%),
+          linear-gradient(160deg, var(--bg-0), var(--bg-1) 55%, var(--bg-2));
+        overflow-x: hidden;
+      }
+
+      .wrap {
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 28px 16px;
+      }
+
+      .card {
+        width: min(980px, 100%);
+        border-radius: var(--radius);
+        padding: clamp(18px, 4vw, 34px);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06));
+        border: 1px solid var(--stroke);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background:
+          radial-gradient(700px 220px at 12% 0%, rgba(var(--accent-c), 0.18), transparent 60%),
+          radial-gradient(700px 240px at 92% 0%, rgba(var(--accent-a), 0.16), transparent 62%),
+          radial-gradient(900px 320px at 50% 120%, rgba(var(--accent-b), 0.14), transparent 58%);
+        filter: blur(18px);
+        opacity: 0.95;
+        pointer-events: none;
+      }
+
+      .card > * {
+        position: relative;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(var(--accent-b), 0.95));
+        box-shadow: 0 14px 32px rgba(var(--accent-b), 0.22);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--muted);
+        letter-spacing: 0.02em;
+        font-weight: 700;
+      }
+
+      .pill__spark {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(var(--accent-a), 0.95));
+        box-shadow: 0 14px 32px rgba(var(--accent-a), 0.22);
+      }
+
+      .main {
+        margin-top: 22px;
+        display: grid;
+        gap: 14px;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+        font-size: clamp(2.1rem, 5.8vw, 3.4rem);
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: clamp(1rem, 2.4vw, 1.12rem);
+        max-width: 72ch;
+      }
+
+      .row {
+        margin-top: 14px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        background:
+          radial-gradient(90px 34px at 30% 0%, rgba(255, 255, 255, 0.2), transparent 70%),
+          linear-gradient(135deg, rgba(var(--accent-c), 0.32), rgba(var(--accent-a), 0.28) 55%, rgba(var(--accent-b), 0.26));
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .note {
+        color: var(--muted-2);
+        font-size: 0.96rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .bar {
+        width: 130px;
+        height: 8px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        width: 48%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(var(--accent-c), 0.95), rgba(var(--accent-a), 0.9), rgba(var(--accent-b), 0.92));
+        animation: move 2.6s ease-in-out infinite;
+      }
+
+      @keyframes move {
+        0% {
+          transform: translateX(-28%);
+        }
+        50% {
+          transform: translateX(80%);
+        }
+        100% {
+          transform: translateX(-28%);
+        }
+      }
+
+      footer {
+        margin-top: 18px;
+        color: rgba(255, 255, 255, 0.44);
+        font-size: 0.92rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bar > span {
+          animation: none;
+          transform: none;
+        }
+      }
+    </style>
   </head>
-
   <body>
-    <canvas class="ambient-canvas" aria-hidden="true"></canvas>
-    <div class="sky" aria-hidden="true">
-      <div class="clouds clouds--back parallax" data-speed="0.12"></div>
-      <div class="clouds clouds--front parallax" data-speed="0.2"></div>
-    </div>
-
-    <main class="scene" role="main">
-      <header class="hero reveal">
-        <div class="hero-clouds" aria-hidden="true">
-          <div class="hero-clouds__layer hero-clouds__layer--far">
-            <span class="hcloud hcloud--1"></span>
-            <span class="hcloud hcloud--2"></span>
-            <span class="hcloud hcloud--3"></span>
+    <main class="wrap" role="main">
+      <section class="card" aria-label="Página en construcción">
+        <div class="top">
+          <div class="brand">
+            <span class="dot" aria-hidden="true"></span>
+            Flores Amarillas
           </div>
-          <div class="hero-clouds__layer hero-clouds__layer--mid">
-            <span class="hcloud hcloud--4"></span>
-            <span class="hcloud hcloud--5"></span>
-            <span class="hcloud hcloud--6"></span>
-          </div>
-          <div class="hero-clouds__layer hero-clouds__layer--near">
-            <span class="hcloud hcloud--7"></span>
-            <span class="hcloud hcloud--8"></span>
+          <div class="pill" aria-label="Estado del sitio">
+            <span class="pill__spark" aria-hidden="true"></span>
+            En construcción
           </div>
         </div>
 
-        <img
-          class="hero__mascot"
-          src="./imgs/descarga%20(4).png"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-        />
-
-        <div class="hero__badge">
-          <span class="badge__dot" aria-hidden="true"></span>
-          Un álbum de ultrasonidos
-        </div>
-        <h1 class="hero__title">Emma Julietta</h1>
-        <p class="hero__subtitle">
-          Julietta, eres nuestro pedacito de cielo que ya está cambiando todo.
-        </p>
-
-        <div class="chips" role="list" aria-label="Información principal">
-          <div class="chip" role="listitem">
-            <div class="chip__label">Nombre completo</div>
-            <div class="chip__value">Emma Julietta Nuñez Herrera</div>
-          </div>
-          <div class="chip" role="listitem">
-            <div class="chip__label">Nacimiento programado</div>
-            <div class="chip__value">3 de abril de 2026</div>
-          </div>
-          <div class="chip" role="listitem">
-            <div class="chip__label">Desarrollo gestacional</div>
-            <div class="chip__value">35 semanas y 2 días</div>
-          </div>
-        </div>
-      </header>
-
-      <section class="glass-card reveal" aria-label="Mensaje">
-        <div class="glass-card__glow" aria-hidden="true"></div>
-        <div class="soft-head">
-          <h2 class="section-title">Un recuerdo, un anuncio y una invitación</h2>
-          <p class="section-subtitle">
-            Esta página es un pequeño espacio lleno de amor para nuestra hija: un recuerdo de esta etapa tan especial para nosotros y también una forma de compartir
-            con nuestra familia y amigos la alegría de su llegada.
+        <div class="main">
+          <h1>Estamos preparando algo muy especial.</h1>
+          <p>
+            Este sitio está en construcción. Vuelve después para ver la versión final, hecha con cariño y con todos los detalles.
           </p>
-        </div>
-      </section>
 
-      <section class="glass-card reveal" aria-label="Información del nacimiento">
-        <div class="glass-card__glow" aria-hidden="true"></div>
-        <div class="soft-head">
-          <h2 class="section-title">Información del nacimiento</h2>
-          <p class="section-subtitle">Por si quieres acompañarnos, estar al pendiente o enviarnos un mensajito ese día.</p>
-        </div>
-
-        <div class="info-grid" role="list" aria-label="Datos del nacimiento">
-          <div class="info-item" role="listitem">
-            <div class="info-item__label">Fecha</div>
-            <div class="info-item__value">3 de abril de 2026</div>
-          </div>
-          <div class="info-item" role="listitem">
-            <div class="info-item__label">Hospital</div>
-            <div class="info-item__value">CHRISTUS MUGUERZA Hospital Betania</div>
-          </div>
-          <div class="info-item info-item--wide" role="listitem">
-            <div class="info-item__label">Dirección</div>
-            <div class="info-item__value">Av 11 Ote 1826, Azcarate, 72501 Heroica Puebla de Zaragoza, Pue.</div>
-          </div>
-        </div>
-
-        <div class="action-row" role="group" aria-label="Acciones de ubicación">
-          <a class="btn" href="https://share.google/CLZQMJmyguR4TJubP" target="_blank" rel="noreferrer">
-            Ver ubicación en Google Maps
-          </a>
-        </div>
-      </section>
-
-      <section class="glass-card reveal" aria-label="Contador regresivo">
-        <div class="glass-card__glow" aria-hidden="true"></div>
-
-        <div class="countdown__head">
-          <h2 class="section-title">Cuenta regresiva</h2>
-          <p class="section-subtitle">Tiempo restante hasta el 3 de abril de 2026</p>
-        </div>
-
-        <div class="countdown" role="group" aria-label="Contador">
-          <div class="countdown__item">
-            <div class="countdown__value" id="cdDays">0</div>
-            <div class="countdown__unit">días</div>
-          </div>
-          <div class="countdown__item">
-            <div class="countdown__value" id="cdHours">00</div>
-            <div class="countdown__unit">horas</div>
-          </div>
-          <div class="countdown__item">
-            <div class="countdown__value" id="cdMinutes">00</div>
-            <div class="countdown__unit">min</div>
-          </div>
-          <div class="countdown__item">
-            <div class="countdown__value" id="cdSeconds">00</div>
-            <div class="countdown__unit">seg</div>
-          </div>
-        </div>
-
-        <div class="countdown__note" id="tzNote" aria-live="polite"></div>
-      </section>
-
-      <section class="glass-card reveal" aria-label="Contacto">
-        <div class="glass-card__glow" aria-hidden="true"></div>
-        <div class="soft-head">
-          <h2 class="section-title">Contacto</h2>
-          <p class="section-subtitle">Si necesitas comunicarnos algo importante, aquí están nuestros teléfonos.</p>
-        </div>
-
-        <div class="info-grid" role="list" aria-label="Teléfonos de contacto">
-          <div class="info-item" role="listitem">
-            <div class="info-item__label">Mamá</div>
-            <div class="info-item__value">222 355 1870</div>
-          </div>
-          <div class="info-item" role="listitem">
-            <div class="info-item__label">Papá</div>
-            <div class="info-item__value">221 168 5660</div>
-          </div>
-        </div>
-
-        <div class="action-row action-row--split" role="group" aria-label="Acciones de contacto">
-          <a class="btn btn--soft" href="tel:2223551870">Llamar a mamá</a>
-          <a class="btn btn--soft" href="tel:2211685660">Llamar a papá</a>
-        </div>
-      </section>
-
-      <section class="glass-card reveal" aria-label="Mesa de regalos">
-        <div class="glass-card__glow" aria-hidden="true"></div>
-        <div class="soft-head">
-          <h2 class="section-title">Mesa de Regalos Amazon</h2>
-          <p class="section-subtitle">Gracias por acompañarnos con tanto cariño. Aquí puedes ver la mesa de regalos.</p>
-        </div>
-
-        <div class="gift-placeholder" role="note" aria-label="Mesa de regalos">
-          <div class="gift-placeholder__title">Mesa de regalos lista</div>
-          <div class="gift-placeholder__text">Gracias por pensar en Emma Julietta con tanto cariño.</div>
-          <div class="action-row" role="group" aria-label="Abrir mesa de regalos">
-            <a
-              class="btn"
-              href="https://www.amazon.com.mx/baby-reg/emmajulietta-nuezherrera-marzo-2026-cuautlancingo/ZK2Z4A74QKHC?ref_=cm_sw_r_apann_dp_12RSF9W837XCPE3SVHV1&amp;language=en-US"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver mesa de regalos
+          <div class="row" aria-label="Progreso">
+            <div class="note">
+              <span>Progreso</span>
+              <span class="bar" aria-hidden="true"><span></span></span>
+            </div>
+            <a class="cta" href="javascript:location.reload()" aria-label="Volver a intentar">
+              Volver después
             </a>
           </div>
         </div>
+
+        <footer>Gracias por tu paciencia.</footer>
       </section>
-
-      <section class="gallery reveal" aria-label="Galería de ultrasonidos">
-        <div class="gallery__head">
-          <h2 class="section-title">Galería de ultrasonidos</h2>
-          <p class="section-subtitle">Toca una tarjeta para ver el archivo en grande.</p>
-        </div>
-
-        <div class="gallery-grid" id="gallery" role="list" aria-label="Ultrasonidos"></div>
-      </section>
-
-      <footer class="closing reveal" aria-label="Cierre">
-        <div class="closing__line" aria-hidden="true"></div>
-        <p class="closing__text">
-          Te esperamos con amor infinito, Emma Julietta. Gracias por acompañarnos en uno de los momentos más importantes de nuestra vida.
-        </p>
-      </footer>
     </main>
-
-    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Vista de ultrasonido">
-      <div class="modal__backdrop" data-close="true" aria-hidden="true"></div>
-      <div class="modal__panel" role="document">
-        <div class="modal__top">
-          <div class="modal__title" id="modalTitle">Ultrasonido</div>
-          <button class="icon-btn" type="button" id="modalClose" aria-label="Cerrar" data-close="true">×</button>
-        </div>
-        <div class="modal__body">
-          <object class="pdf-view" id="pdfObject" type="application/pdf" data="">
-            <p class="pdf-fallback">
-              No se pudo mostrar el PDF aquí. <a id="pdfLink" href="#" target="_blank" rel="noreferrer">Abrir en una pestaña</a>
-            </p>
-          </object>
-        </div>
-        <div class="modal__bottom">
-          <a class="link-btn" id="pdfDownload" href="#" target="_blank" rel="noreferrer">Abrir / Descargar</a>
-        </div>
-      </div>
-    </div>
-
-    <script src="./script.js"></script>
   </body>
 </html>
